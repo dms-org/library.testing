@@ -1,0 +1,35 @@
+{
+    "name": "dms/library.testing",
+    "description": "The testing helper library for the DMS",
+    "authors": [
+        {
+            "name": "Elliot Levin",
+            "email": "elliotlevin@hotmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://api.package.studio/meta/composer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Dms\\Library\\Testing\\": "./src/",
+            "Dms\\Core\\Tests\\": "./vendor/dms/core/tests/Tests/"
+        }
+    },
+    "require": {
+        "php": ">=7.0.0",
+        "dms/core": "^0.1",
+        "dms/common.structure": "^0.1",
+        "dms/common.testing": "dev-master",
+        "illuminate/container": "^5.2"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dms\\Library\\Testing\\Tests\\": "./tests/Tests/"
+        }
+    }
+}
