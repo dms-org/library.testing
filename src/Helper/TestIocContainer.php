@@ -2,6 +2,7 @@
 
 namespace Dms\Library\Testing\Helper;
 
+use Dms\Core\Auth\IAuthSystem;
 use Dms\Core\Event\IEventDispatcher;
 use Dms\Core\Ioc\IIocContainer;
 use Dms\Core\Persistence\Db\Connection\Dummy\DummyConnection;
@@ -31,6 +32,7 @@ class TestIocContainer implements IIocContainer
         $this->container = new Container();
 
         $this->bindValue(IIocContainer::class, $this);
+        $this->bindValue(IAuthSystem::class, new MockEventDispatcher());
         $this->bindValue(IEventDispatcher::class, new MockEventDispatcher());
 
         $this->bind(self::SCOPE_SINGLETON, IConnection::class, DummyConnection::class);
