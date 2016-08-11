@@ -10,6 +10,7 @@ use Dms\Core\Persistence\Db\Connection\IConnection;
 use Dms\Core\Tests\Module\Mock\MockEventDispatcher;
 use Dms\Core\Util\DateTimeClock;
 use Dms\Core\Util\IClock;
+use Dms\Library\Testing\Mock\MockAuthSystem;
 use Illuminate\Container\Container;
 use Interop\Container\Exception\ContainerException;
 use Interop\Container\Exception\NotFoundException;
@@ -32,7 +33,7 @@ class TestIocContainer implements IIocContainer
         $this->container = new Container();
 
         $this->bindValue(IIocContainer::class, $this);
-        $this->bindValue(IAuthSystem::class, new MockEventDispatcher());
+        $this->bindValue(IAuthSystem::class, new MockAuthSystem($this));
         $this->bindValue(IEventDispatcher::class, new MockEventDispatcher());
 
         $this->bind(self::SCOPE_SINGLETON, IConnection::class, DummyConnection::class);
