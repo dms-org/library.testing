@@ -17,10 +17,11 @@
     },
     "require": {
         "php": ">=7.0.0",
-        "dms-org/core": "^0.8",
-        "dms-org/common.structure": "^0.8",
-        "dms-org/common.testing": "dev-master",
-        "illuminate/container": "^5.2"
+        "dms-org/core": "dev-upgrade",
+        "timetoogo/pinq": "dev-upgrade",
+        "dms-org/common.structure": "dev-upgrade",
+        "dms-org/common.testing": "dev-upgrade",
+        "illuminate/container": "^8.14"
     },
     "autoload-dev": {
         "psr-4": {

@@ -15,7 +15,7 @@ class TestIocContainerTest extends CmsTestCase
      */
     protected $iocContainer;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->iocContainer = new TestIocContainer();
     }
