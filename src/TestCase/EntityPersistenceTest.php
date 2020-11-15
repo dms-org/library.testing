@@ -15,7 +15,7 @@ abstract class EntityPersistenceTest extends DbIntegrationTest
      */
     abstract protected function getEntityClass() : string;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
